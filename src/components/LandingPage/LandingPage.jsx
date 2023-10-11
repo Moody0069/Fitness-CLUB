@@ -19,7 +19,16 @@ function LandingPage() {
 
       <div className="grid">
         <div className="grid-col grid-col_8">
-          <p>
+
+
+
+        <h1>Welcome to Fitness CLUB</h1>
+      <p>Discover a healthier you with our diverse range of fitness classes.</p>
+      <p>Join us today and start your fitness journey!</p>
+
+
+
+          {/* <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
             id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra lacus
             ut ex molestie blandit. Etiam et turpis sit amet risus mollis
@@ -49,7 +58,7 @@ function LandingPage() {
             sagittis neque id diam euismod, ut egestas felis ultricies. Nullam
             non fermentum mauris. Sed in enim ac turpis faucibus pretium in sit
             amet nisi.
-          </p>
+          </p> */}
         </div>
         <div className="grid-col grid-col_4">
           <RegisterForm />

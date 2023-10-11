@@ -19,7 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-
+import ClassList from '../ClassList/ClassList';
 import './App.css';
 
 function App() {
@@ -59,6 +59,15 @@ function App() {
           >
             <UserPage />
           </ProtectedRoute>
+
+
+          <ProtectedRoute
+    exact
+    path="/class-list"
+  >
+    <ClassList /> {/* Render the ClassList component when the route is matched */}
+  </ProtectedRoute>
+
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
