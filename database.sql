@@ -10,15 +10,11 @@ CREATE TABLE "user" (
 );
 
 -- Create the Users table
--- CREATE TABLE Users (
---     UserID INT PRIMARY KEY,
---     Email VARCHAR(255) UNIQUE NOT NULL,
---     Password VARCHAR(255) NOT NULL,
---     Name VARCHAR(255),
---    
--- );
-
--- Create the Classes table
+CREATE TABLE "users" (
+    UserID INT PRIMARY KEY,
+    FirstName VARCHAR(255),
+    LastName VARCHAR(255)
+);
 CREATE TABLE Classes (
     ClassID INT PRIMARY KEY,
     Name VARCHAR(255),
@@ -26,11 +22,8 @@ CREATE TABLE Classes (
     Time TIME,
     Location VARCHAR(255),
     Instructor VARCHAR(255),
-    MaxCapacity INT,
-   
+    MaxCapacity INT
 );
-
--- Create the Attendance table
 CREATE TABLE Attendance (
     AttendanceID INT PRIMARY KEY,
     ClassID INT,
@@ -38,5 +31,5 @@ CREATE TABLE Attendance (
     Date DATE,
     Status VARCHAR(50) CHECK (Status IN ('Present', 'Absent')),
     FOREIGN KEY (ClassID) REFERENCES Classes (ClassID),
-    FOREIGN KEY (UserID) REFERENCES Users (UserID)
+    FOREIGN KEY (UserID) REFERENCES users (UserID)
 );

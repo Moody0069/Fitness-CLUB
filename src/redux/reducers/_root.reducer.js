@@ -12,7 +12,8 @@ import classes from './classes.reducer';
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user,
-  classes, // will have an id and username if someone is logged in
+  // classes,
+  // selectedClass, // will have an id and username if someone is logged in
 });
 
 export default rootReducer;
