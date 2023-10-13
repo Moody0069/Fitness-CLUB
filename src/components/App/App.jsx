@@ -26,6 +26,7 @@ import WelcomePage from "../WelcomePage/WelcomePage";
 import SchedulePage from "../SchedulePage/SchedulePage";
 import UpdateProfilePage from "../UpdateProfilePage/UpdateProfilePage"
 import ConfirmationPage from "../ ConfirmationPage/ ConfirmationPage";
+import ReservationPage from "../ReservationPage/ReservationPage";
 //import ClassBookingPage from '../ClassBookingPage/ClassBookingPage';
 import "./App.css";
 
@@ -58,6 +59,11 @@ function App() {
             }
           </ProtectedRoute>
 
+
+          <ProtectedRoute exact path="/ReservationPage">
+            <ReservationPage />
+          </ProtectedRoute>
+
           <ProtectedRoute exact path="/RegisterPage">
             <RegisterPage />
           </ProtectedRoute>
@@ -72,6 +78,11 @@ function App() {
 
           <Route exact path="/ClassDetails">
             <ClassDetails />
+          </Route>
+
+
+          <Route exact path="/ClassList">
+            <ClassList />
           </Route>
 
           <Route exact path="/ConfirmationPage">

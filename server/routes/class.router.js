@@ -18,6 +18,7 @@ const router = express.Router();
 //   });
 
 //could the url maybe be "/" ?
+
 router.get('/api/classes', (req, res) => {
     const query = 'SELECT * FROM Classes';
   
@@ -30,6 +31,23 @@ router.get('/api/classes', (req, res) => {
         res.status(500).json({ message: 'Error fetching classes' });
       });
   });
+
+//   // New endpoint: Get classes by date
+//   router.get('/api/classes/by-date', (req, res) => {
+//     const { date } = req.query; // Assuming date is sent as a query parameter
+//     const query = 'SELECT * FROM Classes WHERE date = $1'; // Adjust your query as needed
+  
+//     pool.query(query, [date])
+//       .then(result => {
+//         res.status(200).json(result.rows);
+//       })
+//       .catch(error => {
+//         console.error('Error fetching classes by date:', error);
+//         res.status(500).json({ message: 'Error fetching classes by date' });
+//       });
+//   });
+
+
 
 
 router.post('/api/classes', (req, res) => {
