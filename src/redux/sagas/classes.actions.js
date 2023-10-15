@@ -1,24 +1,25 @@
 import axios from 'axios';
 
-// Action type
 export const SET_CLASSES = 'SET_CLASSES';
+export const SELECT_CLASS = 'SELECT_CLASS';
+
+export const setClasses = (classes) => ({
+  type: SET_CLASSES,
+  payload: classes,
+});
 
 export const selectClass = (classItem) => ({
-  type: 'SELECT_CLASS',
+  type: SELECT_CLASS,
   payload: classItem,
 });
 
-// Action creator to fetch classes
 export const fetchClasses = () => (dispatch) => {
   axios
-    .get('/api/classes') 
+    .get('/api/classes')
     .then((response) => {
-      dispatch({
-        type: SET_CLASSES,
-        payload: response.data, 
-      });
+      dispatch(setClasses(response.data));
     })
     .catch((error) => {
-      console.error('Error fetching classes:', error);
+      //console.error('Error fetching classes:', error);
     });
 };

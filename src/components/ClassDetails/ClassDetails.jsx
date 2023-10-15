@@ -1,18 +1,25 @@
 // import React from 'react';
 // import { useSelector } from 'react-redux';
-// import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-
+// import { useHistory } from 'react-router-dom';
 
 // function ClassDetail() {
 //   const selectedClass = useSelector((store) => store.selectedClass);
 //   const history = useHistory();
 
+//   const handleBack = () => {
+//     history.push('/SchedulePage');
+//   };
+
+//   const handleRegister = () => {
+//     history.push('/ConfirmationPage');
+//   };
 
 //   return (
 //     <div className="container">
 //       <h1>Class Details</h1>
-//       <button onClick={() => history.push('/SchedulePage')}> Back </button> <br/>
-//         <button onClick={() => history.push('/ConfirmationPage')}> Register </button>
+//       <button onClick={handleBack}>Back</button>
+//       <br />
+//       <button onClick={handleRegister}>Register</button>
 //       {selectedClass ? (
 //         <div>
 //           <h1>{selectedClass.name}</h1>
@@ -30,14 +37,14 @@
 // }
 
 // export default ClassDetail;
-
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-
-function ClassDetail() {
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import './ClassDetails.css';
+function ClassDetails() {
   const selectedClass = useSelector((store) => store.selectedClass);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handleBack = () => {
     history.push('/SchedulePage');
@@ -69,4 +76,4 @@ function ClassDetail() {
   );
 }
 
-export default ClassDetail;
+export default ClassDetails;

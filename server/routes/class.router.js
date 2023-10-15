@@ -20,6 +20,8 @@ const router = express.Router();
 //could the url maybe be "/" ?
 
 router.get('/api/classes', (req, res) => {
+  console.log('API Request Received: /api/classes');
+
     const query = 'SELECT * FROM Classes';
   
     pool.query(query)
@@ -32,20 +34,32 @@ router.get('/api/classes', (req, res) => {
       });
   });
 
-//   // New endpoint: Get classes by date
-//   router.get('/api/classes/by-date', (req, res) => {
-//     const { date } = req.query; // Assuming date is sent as a query parameter
-//     const query = 'SELECT * FROM Classes WHERE date = $1'; // Adjust your query as needed
+
+
+
+
+
+  router.post('/api/sign-up', (req, res) => {
+    const { classId, userId } = req.body;
   
-//     pool.query(query, [date])
-//       .then(result => {
-//         res.status(200).json(result.rows);
-//       })
-//       .catch(error => {
-//         console.error('Error fetching classes by date:', error);
-//         res.status(500).json({ message: 'Error fetching classes by date' });
-//       });
-//   });
+    const query = `
+      INSERT INTO Attendance (ClassID, UserID, Date, Status)
+      VALUES ($1, $2, CURRENT_DATE, 'Present')
+    `;
+    
+    // Use a database query to insert the attendance record
+    pool.query(query, [classId, userId], (error, result) => {
+      if (error) {
+        console.error('Error recording attendance:', error);
+        res.status(500).json({ message: 'Error recording attendance' });
+      } else {
+        res.status(200).json({ message: 'Attendance recorded successfully' });
+      }
+    });
+  });
+  
+
+
 
 
 

@@ -75,10 +75,12 @@ function App() {
           <ProtectedRoute exact path="/SchedulePage">
             <SchedulePage />
           </ProtectedRoute>
-
+          
           <Route exact path="/ClassDetails">
             <ClassDetails />
           </Route>
+
+
 
 
           <Route exact path="/ClassList">
