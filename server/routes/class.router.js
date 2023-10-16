@@ -19,7 +19,7 @@ const router = express.Router();
 
 //could the url maybe be "/" ?
 
-router.get('/api/classes', (req, res) => {
+router.get('/', (req, res) => {
   console.log('API Request Received: /api/classes');
 
     const query = 'SELECT * FROM Classes';

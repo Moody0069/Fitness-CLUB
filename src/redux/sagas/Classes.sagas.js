@@ -1,18 +1,19 @@
-import { takeLatest, call, put } from 'redux-saga/effects';
-import { FETCH_CLASSES, setClasses } from '../actions/classes.actions';
+import { takeLatest, put } from 'redux-saga/effects';
+// import { FETCH_CLASSES, setClasses } from '../actions/classes.actions';
 import axios from 'axios';
 
-function* fetchClassesSaga() {
+function* fetchClasses() {
+console.log('in fetech sage')
   try {
-    const response = yield call(axios.get, '/api/classes');
-    yield put(setClasses(response.data));
+    const response = yield axios.get ( '/api/classes');
+    yield put({ type: 'SET_CLASSES', payload: response.data});
   } catch (error) {
     console.log("get all error")
   }
 }
 
 function* classesSaga() {
-  yield takeLatest(FETCH_CLASSES, fetchClassesSaga);
+  yield takeLatest("FETCH_CLASSES", fetchClasses);
 }
 
 export default classesSaga;
