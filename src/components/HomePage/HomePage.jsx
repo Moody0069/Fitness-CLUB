@@ -27,7 +27,10 @@ function HomePage() {
 
   return (
   <div className="container">
-    <h2>Home Page</h2>
+    {/* <h2>Home Page</h2> */}      
+      <h1>Welcome to Fitness CLUB</h1>
+      <h2>Upcoming Classes</h2>
+
     
     <ul>
         {classes.map((classItem) => (
@@ -42,7 +45,8 @@ function HomePage() {
 
     <button onClick={() => history.push('/SchedulePage')}> Schedule Page </button>
     <button onClick={() => history.push('/ReservationPage')}> Reservation Page </button>
-<ClassList/>
+{/* <ClassList/> */}
+
   </div>
 );
 }

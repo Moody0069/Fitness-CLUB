@@ -21,21 +21,22 @@ function ClassList() {
     <div className="container">
       <h1>Class List</h1>
       <ul>
-        {Array.isArray(classes) && classes.length > 0 ? (
-          classes.map((classItem) => (
+      { classes.map((classItem) => (
             <li
               key={classItem.ClassID}
               onClick={() => handleClassClick(classItem)}
             >
               <h2>{classItem.Name}</h2>
-              <p>Date: {classItem.Date}</p>
+              
+              {/* <p>Date: {classItem.Date}</p>
               <p>Time: {classItem.Time}</p>
-              <p>Location: {classItem.Location}</p>
+              <p>Location: {classItem.Location}</p> */}
             </li>
           ))
-        ) : (
-          <p> Available Classes.</p>
-        )}
+        // ) : (
+        //   <p> Available Classes.</p>
+        // )}
+      }
       </ul>
     </div>
   );
