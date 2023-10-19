@@ -43,7 +43,7 @@ function* SelectedClass() {
 function* classesSaga() {
   yield takeLatest("FETCH_CLASSES", fetchClasses);
   yield takeLatest("FETCH_CLASS_DETAILS", SelectedClass);
-  yield takeLatest("SINGUP_FOR_CLASS", PostClass);
+  yield takeLatest("SINGUP_FOR_CLASS", postClass);
   
 //   yield takeLatest('DELETE_CLASS', deleteClass);
 // yield takeLatest('GET_CLASS', getClass)
