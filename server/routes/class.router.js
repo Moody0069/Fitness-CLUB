@@ -35,23 +35,27 @@ router.get('/', (req, res) => {
   });
 
 
+  router.post('/api/classes', (req, res) => {
+    const { classId, userId, date, status } = req.body;
+    
+    const query = `
+      INSERT INTO "Attendance" ("ClassID", "UserID", "Date", "Status")
+      VALUES ($1, $2, $3, $4)
+      RETURNING *
+    `;
+    
+    pool.query(query, [classId, userId, date, status])
+      .then(result => {
+        res.status(201).json(result.rows[0]);
+      })
+      .catch(error => {
+        console.error('Error inserting attendance:', error);
+        res.status(500).json({ message: 'Error inserting attendance' });
+      });
+  });
+  
 
-    router.post('/', (req, res) => {
-      const url = req.body.url;
-      console.log("url", url);
-      const query = `  SELECT "name","date","time","location","instructor","maxcapacity" FROM "classes" 
-      WHERE classid = $1;`
-      pool
-        .query(query, [req.params.id])
-        .then(result => {
-          // console.log(`Added to database`, url);
-          res.sendStatus(201);
-        })
-        .catch(error => {
-          console.log('Error fetching classes:', error);
-          res.sendStatus(500);
-        });
-    });
+
 
 
     // router.delete('/details/:id', (req, res) => {
@@ -77,24 +81,24 @@ router.get('/', (req, res) => {
 
 
 
-  router.post('/api/sign-up', (req, res) => {
-    const { classId, userId } = req.body;
+  // router.post('/api/sign-up', (req, res) => {
+  //   const { classId, userId } = req.body;
   
-    const query = `
-      INSERT INTO Attendance (ClassID, UserID, Date, Status)
-      VALUES ($1, $2, CURRENT_DATE, 'Present')
-    `;
+  //   const query = `
+  //     INSERT INTO Attendance (ClassID, UserID, Date, Status)
+  //     VALUES ($1, $2, CURRENT_DATE, 'Present')
+  //   `;
     
-    // Use a database query to insert the attendance record
-    pool.query(query, [classId, userId], (error, result) => {
-      if (error) {
-        console.error('Error recording attendance:', error);
-        res.status(500).json({ message: 'Error recording attendance' });
-      } else {
-        res.status(200).json({ message: 'Attendance recorded successfully' });
-      }
-    });
-  });
+  //   // Use a database query to insert the attendance record
+  //   pool.query(query, [classId, userId], (error, result) => {
+  //     if (error) {
+  //       console.error('Error recording attendance:', error);
+  //       res.status(500).json({ message: 'Error recording attendance' });
+  //     } else {
+  //       res.status(200).json({ message: 'Attendance recorded successfully' });
+  //     }
+  //   });
+  // });
   
 
 
