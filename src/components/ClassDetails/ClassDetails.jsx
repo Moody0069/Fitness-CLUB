@@ -1,12 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import './ClassDetails.css';
 function ClassDetails() {
   const selectedClass = useSelector((store) => store.selectedClass);
   const history = useHistory();
   const dispatch = useDispatch();
-
+  const Params = useParams();
   const handleBack = () => {
     history.push('/SchedulePage');
   };
@@ -17,9 +18,11 @@ function ClassDetails() {
   const showDetailsView = (classItem) => {
     dispatch({
       type: "FETCH_CLASS_DETAILS",
-      payload: response.data,
+      payload: Params.id,
+    
     });
-    history.push('/ClassDetails');
+  
+   // history.push('/ClassDetails');
   };
   // dispatch({
   //   type: "SET_SELECTED_CLASS",
@@ -30,7 +33,7 @@ function ClassDetails() {
   const handleRegister = () => {
     history.push('/ConfirmationPage');
   };
-
+console.log ('use params', Params.id);
   return (
     <div className="container">
       <h1>Class Details</h1>

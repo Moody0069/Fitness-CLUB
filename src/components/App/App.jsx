@@ -27,6 +27,7 @@ import SchedulePage from "../SchedulePage/SchedulePage";
 import UpdateProfilePage from "../UpdateProfilePage/UpdateProfilePage"
 import ConfirmationPage from "../ ConfirmationPage/ ConfirmationPage";
 import ReservationPage from "../ReservationPage/ReservationPage";
+
 //import ClassBookingPage from '../ClassBookingPage/ClassBookingPage';
 import "./App.css";
 
@@ -78,7 +79,14 @@ function App() {
           
           <Route exact path="/ClassDetails">
             <ClassDetails />
+
           </Route>
+
+          <Route exact path="/ClassDetails/:id">
+            <ClassDetails />
+
+          </Route>
+
 
 
           <Route exact path="/ClassList">

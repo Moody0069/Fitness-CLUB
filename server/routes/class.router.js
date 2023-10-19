@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
     console.log('API Request Received: /api/classes');
   
       const query = `  SELECT "name","date","time","location","instructor","maxcapacity" FROM "classes" 
-      WHERE classid = 1;`
+      WHERE classid = $1;`
     
       pool.query(query, [req.params.id])
         .then(result => {
@@ -54,7 +54,7 @@ router.get('/', (req, res) => {
       const url = req.body.url;
       console.log("url", url);
       const query = `  SELECT "name","date","time","location","instructor","maxcapacity" FROM "classes" 
-      WHERE classid = 1;`
+      WHERE classid = $1;`
       pool
         .query(query, [req.params.id])
         .then(result => {
