@@ -6,7 +6,7 @@ router.get('/:id', (req, res) => {
     console.log('id', req.params.id)
     console.log('in details');
   
-      const query = `  SELECT "name","date","time","location","instructor","maxcapacity" FROM "classes" 
+      const query = `  SELECT * FROM "classes" 
       WHERE classid = $1;`
     
       pool.query(query, [req.params.id])

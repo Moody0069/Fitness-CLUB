@@ -2,44 +2,40 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-import './ClassDetails.css';
+import userReducer from "../../redux/reducers/user.reducer";
+import "./ClassDetails.css";
 function ClassDetails() {
+  const user = useSelector((store) => store.user);
   const selectedClass = useSelector((store) => store.selectedClass);
   const history = useHistory();
   const dispatch = useDispatch();
   const Params = useParams();
   const handleBack = () => {
-    history.push('/SchedulePage');
+    history.push("/SchedulePage");
   };
-  // const showDetailsView = (classItem) => {
-  //  dispatch(selectClass(classItem));
-  //   history.push('/ClassDetails');
-  // };
-  // const showDetailsView = (classItem) => {
-  //   dispatch({
-  //     type: "FETCH_CLASS_DETAILS",
-  //     payload: Params.id,
-    
-  //   });
-  
-  //  // history.push('/ClassDetails');
-  // };
-  // dispatch({
-  //   type: "SET_SELECTED_CLASS",
-  //   payload: response.data,
-  // });
+  console.log ('user', user);
   
 
   useEffect(() => {
+    // Fetch class details based on Params.id
+    dispatch({ type: 'FETCH_USER' });
     dispatch({
       type: "FETCH_CLASS_DETAILS",
-      payload: Params.id
-  })}, []);
-
+      payload: Params.id,
+    });
+  }, [dispatch, Params.id]);
   const handleRegister = () => {
-    history.push('/ConfirmationPage');
+    dispatch ({ type: "SIGNUP_FOR_CLASS", payload: {
+      classId: selectedClass[0].classid, 
+      userId: user.id,
+      date: selectedClass[0].date,
+      status: "Register",
+    },
+    
+   })
+    history.push("/ConfirmationPage");
   };
-console.log ('use params', Params.id);
+
   return (
     <div className="container">
       <h1>Class Details</h1>
@@ -47,8 +43,10 @@ console.log ('use params', Params.id);
       <br />
       <button onClick={handleRegister}>Register</button>
       {selectedClass.length ? (
+      
         // changed selecteClass to selectedClass
-          <div key={selectedClass[0].name} >
+        <div key={selectedClass[0].name}>
+    
           <h1>{selectedClass[0].name}</h1>
           <p>Date: {selectedClass[0].date}</p>
           <p>Time: {selectedClass[0].time}</p>
@@ -56,7 +54,6 @@ console.log ('use params', Params.id);
           <p>Instructor: {selectedClass[0].instructor}</p>
           <p>Max Capacity: {selectedClass[0].maxcapacity}</p>
         </div>
-        
       ) : (
         <p>No class selected.</p>
       )}
