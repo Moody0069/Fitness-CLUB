@@ -11,10 +11,11 @@ console.log('in fetech sage')
     console.log("get all error")
   }
 }
-function* SelectedClass() {
+function* SelectedClass(action) {
     console.log('in fetech sage')
       try {
-        const response = yield axios.get ( `/api/classes/details/${action.payload} `);
+        const response = yield axios.get (`/api/detail/${action.payload}`);
+        console.log('response',response.data)
         yield put({ type: 'SELECT_CLASS', payload: response.data});
       } catch (error) {
         console.log("get all error")

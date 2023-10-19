@@ -34,21 +34,7 @@ router.get('/', (req, res) => {
       });
   });
 
-  router.get('/details/:id', (req, res) => {
-    console.log('API Request Received: /api/classes');
-  
-      const query = `  SELECT "name","date","time","location","instructor","maxcapacity" FROM "classes" 
-      WHERE classid = $1;`
-    
-      pool.query(query, [req.params.id])
-        .then(result => {
-          res.status(200).json(result.rows);
-        })
-        .catch(error => {
-          console.error('Error fetching classes:', error);
-          res.status(500).json({ message: 'Error fetching classes' });
-        });
-    });
+
 
     router.post('/', (req, res) => {
       const url = req.body.url;
