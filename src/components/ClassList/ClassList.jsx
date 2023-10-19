@@ -21,7 +21,7 @@ function ClassList() {
     <div className="container">
       <h1>Class List</h1>
       <ul>
-      { classes.map((classItem) => (
+      { ClassList.map((classItem) => (
             <li
               key={classItem.ClassID}
               onClick={() => handleClassClick(classItem)}

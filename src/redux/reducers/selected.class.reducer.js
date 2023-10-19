@@ -1,5 +1,4 @@
 
-
 const selectedClass = (state = null, action) => {
   switch (action.type) {
     case  'SELECT_CLASS':

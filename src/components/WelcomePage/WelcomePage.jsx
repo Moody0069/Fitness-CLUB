@@ -7,7 +7,7 @@ function WelcomePage() {
       <div className="container">
         <h2>Welcome</h2>
         <button onClick={() => history.push('/LoginPage')}> Login Page </button> <br/>
-        <button onClick={() => history.push('/RegisterPage')}> Register Page </button>
+        <button onClick={() => history.push('/registration')}> Register Page </button>
 
       </div>
     );

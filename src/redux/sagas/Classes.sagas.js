@@ -21,9 +21,31 @@ function* SelectedClass() {
       }
     }
 
+    // function* postClass() {
+    //     try {
+    //         const postFavorite=yield axios.post('/api/Classes', action.payload);
+    //         // console.log('postfavorite',postFavorite.config.data)
+    //         yield put({ type: 'GET_CLASSES'});
+    //     } catch (error) {
+    //         console.log('error posting Class', error);
+    //     }    
+    //   }
+
+    // function* deleteClass(action) {
+    //     try {
+    //       const deleteClass = yield axios.delete(`/details/:id + action.payload`);
+    //       console.log(deleteClass)
+    //       yield put({ type: 'FETCH_CLASSES'});
+    //     } catch (error) {
+    //       console.log("error DELETING Classes", error);
+    //     }
+    //   }
 function* classesSaga() {
   yield takeLatest("FETCH_CLASSES", fetchClasses);
   yield takeLatest("FETCH_CLASS_DETAILS", SelectedClass);
+//   yield takeLatest('DELETE_CLASS', deleteClass);
+// yield takeLatest('GET_CLASS', getClass)
+
 }
 
 export default classesSaga;

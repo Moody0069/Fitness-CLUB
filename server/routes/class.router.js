@@ -50,6 +50,44 @@ router.get('/', (req, res) => {
         });
     });
 
+    router.post('/', (req, res) => {
+      const url = req.body.url;
+      console.log("url", url);
+      const query = `  SELECT "name","date","time","location","instructor","maxcapacity" FROM "classes" 
+      WHERE classid = 1;`
+      pool
+        .query(query, [req.params.id])
+        .then(result => {
+          // console.log(`Added to database`, url);
+          res.sendStatus(201);
+        })
+        .catch(error => {
+          console.log('Error fetching classes:', error);
+          res.sendStatus(500);
+        });
+    });
+
+
+    // router.delete('/details/:id', (req, res) => {
+    //     let idToDelete = req.params.id;
+    //     console.log("idToDelete", idToDelete);
+    //     let sqlText = `
+    //           DELETE FROM category WHERE "classid" = $1;
+    //           `;
+    //     pool
+    //       .query(sqlText, [req.params.id])
+    //       .then(result => {
+    //         console.log("Deleted from database ", idToDelete);
+    //         res.sendStatus(202);
+    //       })
+        
+    //         .catch(error => {
+    //           console.error('Error fetching classes:', error);
+    //           res.status(500).json({ message: 'Error fetching classes' });
+    //         });
+    //     });
+    
+    
 
 
 
@@ -104,3 +142,77 @@ router.post('/api/classes', (req, res) => {
 });
 
   module.exports = router;
+  // router.get('/', (req, res) => {
+  //   const sqlText = `SELECT * FROM category ORDER BY "id" DESC`;
+  //   console.log("Get text", sqlText);
+  //   pool
+  //     .query(sqlText)
+  //     .then((result) => {
+  //       console.log(`GET from database`, result);
+  //       res.send(result.rows);
+  //     })
+  //     .catch((error) => {
+  //       console.log(`Error making database query ${sqlText}`, error);
+  //       res.sendStatus(500);
+  //     });
+  // });
+  
+  // // add a new favorite
+  // router.post('/', (req, res) => {
+  //   const url = req.body.url;
+  //   console.log("url", url);
+  //   const sqlText = `INSERT INTO category ("url")
+  //          VALUES ($1)`;
+  //   pool
+  //     .query(sqlText, [
+  //       url
+  //     ])
+  //     .then((result) => {
+  //       console.log(`Added to database`, url);
+  //       res.sendStatus(201);
+  //     })
+  //     .catch((error) => {
+  //       console.log(`Error making database query ${sqlText}`, error);
+  //       res.sendStatus(500);
+  //     });
+  // });
+  
+  // // update given favorite with a category id
+  // router.put('/:favId', (req, res) => {
+  //   let idToUpdate = req.params.favId;
+  //   let category = req.body.category;
+  //   let sqlText = `UPDATE category SET "category" = $1 WHERE "id" = $2;`;
+  
+  //   pool
+  //     .query(sqlText, [category,idToUpdate])
+  //     .then((result) => {
+  //       console.log("Update in database", idToUpdate);
+  //       res.sendStatus(200);
+  //     })
+  //     .catch((error) => {
+  //       console.log(`Error making database query ${sqlText}`, error);
+  //       res.sendStatus(500);
+  //     });
+  // });
+  
+  // // delete a favorite
+  // router.delete('/:id', (req, res) => {
+  //   let idToDelete = req.params.id;
+  //   console.log("idToDelete", idToDelete);
+  //   let sqlText = `
+  //         DELETE FROM category WHERE "id" = $1;
+  //         `;
+  //   pool
+  //     .query(sqlText, [idToDelete])
+  //     .then((result) => {
+  //       console.log("Deleted from database ", idToDelete);
+  //       res.sendStatus(202);
+  //     })
+  //     .catch((error) => {
+  //       console.log(`Error making database query ${sqlText}`, error);
+  //       res.sendStatus(500);
+  //     });
+  // });
+  
+  // module.exports = router;
+  

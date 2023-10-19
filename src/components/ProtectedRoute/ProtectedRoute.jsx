@@ -31,6 +31,7 @@ function ProtectedRoute({ component, children, ...props }) {
         // If the user is logged in, show the protected component
         <ProtectedComponent />
         :
+        
         // Otherwise, redirect to the Loginpage
         <LoginPage />
       }

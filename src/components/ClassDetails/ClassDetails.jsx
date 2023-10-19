@@ -1,4 +1,3 @@
-import { response } from "express";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -39,8 +38,8 @@ function ClassDetails() {
       <br />
       <button onClick={handleRegister}>Register</button>
       {selectedClass ? (
-        
-          <div key={selectClass.classItem} onClick={() => showDetailsView(selectedClass)}>
+        // changed selecteClass to selectedClass
+          <div key={selectedClass.classItem} onClick={() => showDetailsView(selectedClass)}>
           <h1>{selectedClass.name}</h1>
           <p>Date: {selectedClass.date}</p>
           <p>Time: {selectedClass.time}</p>
