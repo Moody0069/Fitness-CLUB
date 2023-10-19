@@ -12,26 +12,18 @@ function ClassList() {
     dispatch({ type: 'FETCH_CLASSES' });
   }, []);
 
-  function handleClassClick(classItem) {
-    dispatch(selectClass(classItem));
-    history.push(`/ClassDetails`);
-  }
+  // function handleClassClick(classItem) {
+  //   dispatch(selectClass(classItem));
+  //   history.push(`/ClassDetails`);
+  // }
   // ${classItem.id}
   return (
     <div className="container">
       <h1>Class List</h1>
       <ul>
-      { ClassList.map((classItem) => (
-            <li
-              key={classItem.ClassID}
-              onClick={() => handleClassClick(classItem)}
-            >
-              <h2>{classItem.Name}</h2>
-              
-              {/* <p>Date: {classItem.Date}</p>
-              <p>Time: {classItem.Time}</p>
-              <p>Location: {classItem.Location}</p> */}
-            </li>
+      { Classlist.map((classItem) => (
+        <ClassItem key={classItem.ClassID} id ={classItem.ClassID} Name = {classItem.Name}  />
+        
           ))
         // ) : (
         //   <p> Available Classes.</p>

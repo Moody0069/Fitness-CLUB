@@ -1,5 +1,5 @@
 
-const selectedClass = (state = null, action) => {
+const selectedClass = (state = [], action) => {
   switch (action.type) {
     case  'SELECT_CLASS':
      return action.payload

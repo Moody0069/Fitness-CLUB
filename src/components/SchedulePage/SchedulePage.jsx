@@ -15,23 +15,27 @@ function SchedulePage() {
   }, []);
 
   const handleSignUp = (classItem) => {
-    dispatch(selectedClass(classItem));
-    history.push('/ClassDetails');
+    dispatch ({ type: "SINGUP_FOR_CLASS", payload: classItem});
+    history.push(`/ClassDetails/${classItem}`);
   };
-
+{/* <ul>
+      { Classlist.map((classItem) => (
+        <ClassItem key={classItem.ClassID} id ={classItem.ClassID} Name = {classItem.Name}  />
+        
+          )) */}
   return (
     <div className="container">
       <h2>Schedule</h2>
       <ul>
       { classes.map((classItem) => (
-            <li key={classItem.classid}>
+            <li key={classItem.classid}  >
               <h3>{classItem.name}</h3>
               <p>Date: {classItem.date}</p>
               <p>Time: {classItem.time}</p>
               <p>Location: {classItem.location}</p>
               <p>Instructor: {classItem.instructor}</p>
               <p>Max Capacity: {classItem.maxcapacity}</p>
-              <button onClick={() => handleSignUp(classItem)}>Sign Up</button>
+              <button onClick={() => handleSignUp(classItem.classid)}>Sign Up</button>
             </li> 
           ))
       }
