@@ -15,7 +15,7 @@ function SchedulePage() {
   }, []);
 
   const handleSignUp = (classItem) => {
-    dispatch(selectedClass(classItem));
+    dispatch ({ type: "SINGUP_FOR_CLASS", payload: classItem});
     history.push('/ClassDetails');
   };
 

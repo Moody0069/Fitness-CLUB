@@ -21,15 +21,15 @@ function* SelectedClass() {
       }
     }
 
-    // function* postClass() {
-    //     try {
-    //         const postFavorite=yield axios.post('/api/Classes', action.payload);
-    //         // console.log('postfavorite',postFavorite.config.data)
-    //         yield put({ type: 'GET_CLASSES'});
-    //     } catch (error) {
-    //         console.log('error posting Class', error);
-    //     }    
-    //   }
+    function* postClass(action) {
+        try {
+            yield axios.post('/api/Classes', action.payload);
+            // console.log('postfavorite',postFavorite.config.data)
+            yield put({ type: 'GET_CLASSES'});
+        } catch (error) {
+            console.log('error posting Class', error);
+        }    
+      }
 
     // function* deleteClass(action) {
     //     try {
@@ -43,6 +43,8 @@ function* SelectedClass() {
 function* classesSaga() {
   yield takeLatest("FETCH_CLASSES", fetchClasses);
   yield takeLatest("FETCH_CLASS_DETAILS", SelectedClass);
+  yield takeLatest("SINGUP_FOR_CLASS", PostClass);
+  
 //   yield takeLatest('DELETE_CLASS', deleteClass);
 // yield takeLatest('GET_CLASS', getClass)
 
