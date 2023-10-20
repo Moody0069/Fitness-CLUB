@@ -1,15 +1,16 @@
 
-const selectedClass = (state = [], action) => {
+const selectedClasses = (state = [], action) => {
   switch (action.type) {
-    case  'SELECT_CLASS':
-     return action.payload
-     
+    case  'SET_SELECTED_CLASSES':
+    //  return action.payload
+    return [...state,
+        ...action.payload]
     default:
       return state;
   }
 };
 
-export default selectedClass;
+export default selectedClasses;
 
 
 
