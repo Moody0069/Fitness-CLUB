@@ -25,9 +25,10 @@ function ClassDetails() {
     });
   }, [dispatch, Params.id]);
   const handleRegister = () => {
+    console.log("info ", selectedClass[0], user.id )
     dispatch ({ type: "SIGNUP_FOR_CLASS", payload: {
-      classId: selectedClass[0].classid, 
-      userId: user.id,
+      classid: selectedClass[0].classid, 
+      userid: user.id,
       date: selectedClass[0].date,
       status: "Register",
     },

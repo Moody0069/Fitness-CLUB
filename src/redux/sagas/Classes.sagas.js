@@ -24,8 +24,8 @@ function* SelectedClass(action) {
 
     function* postClass(action) {
         try {
+            console.log('action.payload', action.payload)
             yield axios.post('/api/classes', action.payload);
-            // console.log('postfavorite',postFavorite.config.data)
             yield put({ type: 'GET_CLASSES'});
         } catch (error) {
             console.log('error posting Class', error);
@@ -55,7 +55,7 @@ function* classesSaga() {
   yield takeLatest("FETCH_CLASSES", fetchClasses);
   yield takeLatest("FETCH_CLASS_DETAILS", SelectedClass);
   yield takeLatest("SIGNUP_FOR_CLASS", postClass);
-/
+
   
 //   yield takeLatest('DELETE_CLASS', deleteClass);
 // yield takeLatest('GET_CLASS', getClass)
