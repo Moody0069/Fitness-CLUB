@@ -22,3 +22,9 @@ Notifications: Component responsible for displaying notifications to users about
 
 UserDashboard: A user-specific dashboard where users can view their upcoming fitness classes, attendance history, and any other relevant user data. This component should provide a personalized experience for each user.
 
+dispatch (find example)
+to
+deleteClass (saga)
+   axios.delete(find example)
+class.router
+  router.delete

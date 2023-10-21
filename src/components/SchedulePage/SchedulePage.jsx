@@ -5,7 +5,6 @@ import './SchedulePage.css';
 
 function SchedulePage() {
   const classes = useSelector((state) => state.classes);
-  const selectedClass = useSelector((state) => state.selectedClass); // Added for selected class
   const history = useHistory();
   const dispatch = useDispatch(); 
 

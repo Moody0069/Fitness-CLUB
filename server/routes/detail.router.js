@@ -3,8 +3,8 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 router.get('/:id', (req, res) => {
-    console.log('id', req.params.id)
-    console.log('in details');
+    // console.log('id', req.params.id)
+    // console.log('in details');
   
       const query = `  SELECT * FROM "classes" 
       WHERE classid = $1;`

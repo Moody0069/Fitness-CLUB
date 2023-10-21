@@ -3,8 +3,9 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 //import classes from './classes.reducer';
 import classes from './classes.reducer';
-import selectedClass from './selected.class.reducer';
-
+import selectedClasses from './selected.class.reducer';
+import classDetails from './classDetails.reducer';
+import registeredClasses from './registered.classess.reducer';
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -15,10 +16,9 @@ const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user,
   classes,
-  
-  
-  
-  selectedClass, // will have an id and username if someone is logged in
+  classDetails,
+  selectedClasses, // will have an id and username if someone is logged in
+  registeredClasses,
 });
 
 export default rootReducer;

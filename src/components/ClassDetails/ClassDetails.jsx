@@ -6,7 +6,7 @@ import userReducer from "../../redux/reducers/user.reducer";
 import "./ClassDetails.css";
 function ClassDetails() {
   const user = useSelector((store) => store.user);
-  const selectedClass = useSelector((store) => store.selectedClass);
+  const classDetails = useSelector((store) => store.classDetails);
   const history = useHistory();
   const dispatch = useDispatch();
   const Params = useParams();
@@ -25,11 +25,11 @@ function ClassDetails() {
     });
   }, [dispatch, Params.id]);
   const handleRegister = () => {
+    // console.log("info ", selectedClass[0], user.id )
     dispatch ({ type: "SIGNUP_FOR_CLASS", payload: {
-      classId: selectedClass[0].classid, 
-      userId: user.id,
-      date: selectedClass[0].date,
-      status: "Register",
+      classid: classDetails[0].classid, 
+      userid: user.id,
+      date: classDetails[0].date
     },
     
    })
@@ -42,17 +42,17 @@ function ClassDetails() {
       <button onClick={handleBack}>Back</button>
       <br />
       <button onClick={handleRegister}>Register</button>
-      {selectedClass.length ? (
+      {classDetails.length ? (
       
         // changed selecteClass to selectedClass
-        <div key={selectedClass[0].name}>
+        <div key={classDetails[0].name}>
     
-          <h1>{selectedClass[0].name}</h1>
-          <p>Date: {selectedClass[0].date}</p>
-          <p>Time: {selectedClass[0].time}</p>
-          <p>Location: {selectedClass[0].location}</p>
-          <p>Instructor: {selectedClass[0].instructor}</p>
-          <p>Max Capacity: {selectedClass[0].maxcapacity}</p>
+          <h1>{classDetails[0].name}</h1>
+          <p>Date: {classDetails[0].date}</p>
+          <p>Time: {classDetails[0].time}</p>
+          <p>Location: {classDetails[0].location}</p>
+          <p>Instructor: {classDetails[0].instructor}</p>
+          <p>Max Capacity: {classDetails[0].maxcapacity}</p>
         </div>
       ) : (
         <p>No class selected.</p>
