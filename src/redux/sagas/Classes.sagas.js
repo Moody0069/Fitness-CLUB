@@ -42,15 +42,24 @@ function* postClass(action) {
   }
 }
 
+// function* deleteClass(action) {
+//     try {
+//       const classId = yield axios.delete(`/api/class/${classId}`); 
+//       yield put({ type: 'FETCH_CLASSES' }); 
+//     } catch (error) {
+//       console.log("Error deleting class", error);
+//     }
+//    }
 function* deleteClass(action) {
     try {
-      const classId = action.payload; 
-      yield axios.delete(`/api/class/${classId}`); 
-      yield put({ type: 'FETCH_CLASSES' }); 
+      const classId = action.payload;
+      yield axios.delete(`/api/class/${classId}`);
+      yield put({ type: 'FETCH_CLASSES' }); // To refresh the list after deletion
     } catch (error) {
       console.log("Error deleting class", error);
     }
-   }
+  }
+  
 
 function* classesSaga() {
   yield takeLatest("FETCH_CLASSES", fetchClasses);
