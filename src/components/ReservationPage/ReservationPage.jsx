@@ -18,10 +18,10 @@ function ReservationPage() {
       type: "FETCH_CLASS_ATTENDANCE",
       payload: user.id,
     });
-  }, [dispatch, user.id]);
+  }, [dispatch, registeredClasses]);
 
-  const classes = registeredClasses.map((currentClass) => (
-    <div key={currentClass.attendanceid}>
+  const classes = registeredClasses.map((currentClass, index) => (
+    <div key={`class-${index}`}>
       <h2>{currentClass.name}</h2>
       <p>{currentClass.instructor}</p>
       <p>{currentClass.maxcapacity}</p>
@@ -37,7 +37,6 @@ function ReservationPage() {
       <h2>My Reservation</h2>
       {classes}
       <button onClick={() => history.push("/HomePage")}>Home</button>
-      {/* <button onClick={() => history.push("/DeleteClass")}>DeleteClass</button> */}
     </div>
   );
 }

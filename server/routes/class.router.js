@@ -76,13 +76,10 @@ router.get('/', (req, res) => {
   
 // delete
 
-// router.delete('/class/:id', (req, res) => {
-
-  // const classId = req.params.id;
-  router.delete('/class/:classId', (req, res) => {
-    const classId = req.params.classId;
+router.delete('/:id', (req, res) => {
+  const classId = req.params.id;
 // console.log('received delete request for class with ID:', classId );
-  const query = 'DELETE FROM Classes WHERE ClassID = $1';
+  const query = 'DELETE FROM attendance WHERE attendanceid = $1';
 
   pool.query(query, [classId])
     .then(() => {

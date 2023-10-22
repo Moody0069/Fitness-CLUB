@@ -1,5 +1,4 @@
 import { takeLatest, put } from "redux-saga/effects";
-// import { FETCH_CLASSES, setClasses } from '../actions/classes.actions';
 import axios from "axios";
 
 function* fetchClasses() {
@@ -47,7 +46,7 @@ function* postClass(action) {
 function* deleteClass(action) {
     try {
       const classId = action.payload;
-      yield axios.delete(`/api/class/${classId}`);
+      yield axios.delete(`/api/classes/${classId}`);
       yield put({ type: 'FETCH_CLASSES' }); // To refresh the list after deletion
     } catch (error) {
       console.log("Error deleting class", error);
