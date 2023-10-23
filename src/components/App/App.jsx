@@ -134,6 +134,13 @@ function App() {
           </Route>
 
 
+          <Route
+           
+            exact
+            path="/AboutPage"
+          >
+            <AboutPage />
+          </Route>
 
           
 {/* Example of redirection */}
