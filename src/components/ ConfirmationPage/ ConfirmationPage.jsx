@@ -6,8 +6,8 @@ function ConfirmationPage() {
 
       return (
         <div className="container">
-          <h2>Confirmation</h2>
-          <button onClick={() => history.push('/HomePage')}> Next </button>
+          <h2>Confirmation: Success!</h2>
+          <button onClick={() => history.push('/HomePage')}> Home </button>
         </div>
       );
     }

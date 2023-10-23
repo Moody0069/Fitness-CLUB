@@ -69,33 +69,36 @@ function App() {
             <RegisterPage />
           </ProtectedRoute>
 
-          <Route exact path="/HomePage">
+          <ProtectedRoute exact path="/HomePage">
             <HomePage />
-          </Route>
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/UpdateProfilePage">
+            <UpdateProfilePage />
+          </ProtectedRoute>
+
 
           <ProtectedRoute exact path="/SchedulePage">
             <SchedulePage />
           </ProtectedRoute>
           
-          <Route exact path="/ClassDetails">
+          <ProtectedRoute exact path="/ClassDetails">
             <ClassDetails />
+          </ProtectedRoute>
 
-          </Route>
-
-          <Route exact path="/ClassDetails/:id">
+          <ProtectedRoute exact path="/ClassDetails/:id">
             <ClassDetails />
-
-          </Route>
-
+          </ProtectedRoute>
 
 
-          <Route exact path="/ClassList">
+
+          <ProtectedRoute exact path="/ClassList">
             <ClassList />
-          </Route>
+          </ProtectedRoute>
 
-          <Route exact path="/ConfirmationPage">
+          <ProtectedRoute exact path="/ConfirmationPage">
             <ConfirmationPage />
-          </Route>
+          </ProtectedRoute>
 
           <Route exact path="/UpdateProfilePage">
             <UpdateProfilePage /> 
