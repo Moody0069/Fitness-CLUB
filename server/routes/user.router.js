@@ -37,6 +37,7 @@ router.post('/register', (req, res, next) => {
 // this middleware will run our POST if successful
 // this middleware will send a 404 if not successful
 router.post('/login', userStrategy.authenticate('local'), (req, res) => {
+  console.log('hit')
   res.sendStatus(200);
 });
 
@@ -45,6 +46,28 @@ router.post('/logout', (req, res) => {
   // Use passport's built-in method to log out the user
   req.logout();
   res.sendStatus(200);
+});
+
+//put
+router.put('/update', (req, res) => {
+  const { userid, username } = req.body;
+  const password = encryptLib.encryptPassword(req.body.password);
+  console.log(req.body)
+  const updateQuery = `
+    UPDATE "user"
+    SET username = $1, password = $2
+    WHERE id = $3
+  `;
+
+  pool
+    .query(updateQuery, [username, password, userid])
+    .then((result) => {
+      res.sendStatus(200)
+    })
+    .catch((error) => {
+      console.error('Error updating user information:', error);
+      res.sendStatus(500); 
+    });
 });
 
 module.exports = router;

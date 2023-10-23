@@ -1,0 +1,44 @@
+.welcome-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #00acb0;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .welcome-heading {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-subheading {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  .welcome-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #014041;
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .welcome-button:hover {
+    background-color: #008183;
+  }
+  
+  .welcome-button:first-child {
+    background-color: #009688;
+  }
+  
+  .welcome-button:first-child:hover {
+    background-color: #006b5b;
+  }
+  

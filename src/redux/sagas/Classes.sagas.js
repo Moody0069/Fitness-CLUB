@@ -1,5 +1,4 @@
 import { takeLatest, put } from "redux-saga/effects";
-// import { FETCH_CLASSES, setClasses } from '../actions/classes.actions';
 import axios from "axios";
 
 function* fetchClasses() {
@@ -34,31 +33,40 @@ function* fetchClassDetails(action) {
 
 function* postClass(action) {
   try {
-    console.log("action.payload", action.payload);
-    const response = yield axios.post("/api/classes/attendance", action.payload);
+    yield axios.post("/api/classes/attendance", action.payload);
     yield put({ type: "FETCH_CLASS_ATTENDANCE", payload: action.payload.userid});
   } catch (error) {
     console.log("error posting Class", error);
   }
 }
 
-// function* deleteClass(action) {
-//     try {
-//       const classId = yield axios.delete(`/api/class/${classId}`); 
-//       yield put({ type: 'FETCH_CLASSES' }); 
-//     } catch (error) {
-//       console.log("Error deleting class", error);
-//     }
-//    }
+
+
 function* deleteClass(action) {
     try {
       const classId = action.payload;
-      yield axios.delete(`/api/class/${classId}`);
+      yield axios.delete(`/api/classes/${classId}`);
       yield put({ type: 'FETCH_CLASSES' }); // To refresh the list after deletion
     } catch (error) {
       console.log("Error deleting class", error);
     }
   }
+  
+  //put
+  function* updateUser(action) {
+    try {
+      const { userid, username, password } = action.payload;
+  
+      const response = yield axios.put('/api/user/update', { userid, username, password });
+
+      yield put({ type: 'USER_INFO_UPDATED' });
+    } catch (error) {
+      console.log('Error updating user information:', error);
+    }
+  }
+
+
+
   
 
 function* classesSaga() {
@@ -67,7 +75,7 @@ function* classesSaga() {
   yield takeLatest("SIGNUP_FOR_CLASS", postClass);
   yield takeLatest("DELETE_CLASS", deleteClass);
     yield takeLatest('FETCH_CLASS_ATTENDANCE', fetchClassAttendance);
-  // yield takeLatest('GET_CLASS', getClass)
+    yield takeLatest('UPDATE_USER_INFO', updateUser);
 }
 
 export default classesSaga;

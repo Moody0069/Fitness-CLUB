@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-
+import './WelcomePage.css';
 
 function WelcomePage() {
   const history = useHistory();

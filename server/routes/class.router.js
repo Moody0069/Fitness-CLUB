@@ -75,24 +75,11 @@ router.get('/', (req, res) => {
   });
   
 // delete
-// router.delete('/class/:id', (req, res) => {
-//   const classId = req.params.id;
 
-//   const query = 'DELETE FROM Classes WHERE id = $1';
-  
-//   pool.query(query, [classId])
-//     .then(() => {
-//       res.sendStatus(204); 
-//     })
-//     .catch(error => {
-//       console.error('Error deleting class:', error);
-//       res.status(500).json({ message: 'Error deleting class' });
-//     });
-// });
-router.delete('/class/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   const classId = req.params.id;
-
-  const query = 'DELETE FROM Classes WHERE ClassID = $1';
+// console.log('received delete request for class with ID:', classId );
+  const query = 'DELETE FROM attendance WHERE attendanceid = $1';
 
   pool.query(query, [classId])
     .then(() => {
