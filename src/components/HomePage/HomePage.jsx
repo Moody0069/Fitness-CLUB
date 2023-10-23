@@ -2,8 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 // import '.src/components/HomePage/HomePage.css';
 import './HomePage.css';
-import ClassList from "../ClassList/ClassList";
-
+import ClassList from "../ClassList/ClassList"
 function HomePage() {
   const history = useHistory();
   const classes = [

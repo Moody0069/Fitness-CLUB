@@ -35,7 +35,7 @@ function Nav() {
               Info Page
             </Link> */}
 
-        <Link className="navLink" to="/about">
+        <Link className="navLink" to="/AboutPage">
           About
         </Link>
 
