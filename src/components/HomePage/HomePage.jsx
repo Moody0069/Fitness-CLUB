@@ -6,21 +6,21 @@ import ClassList from "../ClassList/ClassList"
 function HomePage() {
   const history = useHistory();
   const classes = [
-    {
-      id: 1,
-      name: 'Yoga',
-      description: 'A relaxing yoga class to unwind and de-stress.',
-    },
-    {
-      id: 2,
-      name: 'Cycle',
-      description: 'An intense cycling workout to boost your cardio fitness.',
-    },
-    {
-      id: 3,
-      name: 'Zumba',
-      description: 'A fun and energetic dance fitness class.',
-    },
+    // {
+    //   id: 1,
+    //   name: 'Yoga',
+    //   description: 'A relaxing yoga class to unwind and de-stress.',
+    // },
+    // {
+    //   id: 2,
+    //   name: 'Cycle',
+    //   description: 'An intense cycling workout to boost your cardio fitness.',
+    // },
+    // {
+    //   id: 3,
+    //   name: 'Zumba',
+    //   description: 'A fun and energetic dance fitness class.',
+    // },
   ];
 
 
