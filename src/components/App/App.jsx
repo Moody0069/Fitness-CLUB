@@ -65,9 +65,9 @@ function App() {
             <ReservationPage />
           </ProtectedRoute>
 
-          <ProtectedRoute exact path="/registration">
+          <Route exact path="/registration">
             <RegisterPage />
-          </ProtectedRoute>
+          </Route>
 
           <ProtectedRoute exact path="/HomePage">
             <HomePage />
