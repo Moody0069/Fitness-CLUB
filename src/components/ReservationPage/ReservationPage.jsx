@@ -18,7 +18,7 @@ function ReservationPage() {
       type: "FETCH_CLASS_ATTENDANCE",
       payload: user.id,
     });
-  }, [dispatch, registeredClasses]);
+  }, []);
 
   const classes = registeredClasses.map((currentClass, index) => (
     <div key={`class-${index}`}>

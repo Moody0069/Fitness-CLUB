@@ -13,6 +13,7 @@ function SchedulePage() {
   }, []);
 
   const handleSignUp = (classItem) => {
+    
     // dispatch ({ type: "SIGNUP_FOR_CLASS", payload: classItem});
     history.push(`/ClassDetails/${classItem}`);
   };

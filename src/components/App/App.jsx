@@ -42,7 +42,8 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <div className= "My_background_img">
+        
         <Nav />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
