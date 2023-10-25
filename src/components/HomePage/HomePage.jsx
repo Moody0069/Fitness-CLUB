@@ -1,10 +1,11 @@
-
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import './HomePage.css';
 
 function HomePage() {
   const history = useHistory();
+  
+  // Define an array of classes
   const classes = [
     {
       id: 1,
@@ -26,6 +27,15 @@ function HomePage() {
     },
   ];
 
+  const [activeAccordion, setActiveAccordion] = useState(null); 
+  const toggleAccordion = (id) => {
+    if (activeAccordion === id) {
+      setActiveAccordion(null); // If it's already active, close it
+    } else {
+      setActiveAccordion(id); // If it's not active, set it as active
+    }
+  };
+
   return (
     <div className="container">
       <h1>Welcome to Fitness CLUB</h1>
@@ -35,9 +45,15 @@ function HomePage() {
           <li key={classItem.id}>
             <div className="class-card">
               <h3>{classItem.name}</h3>
-              <p>{classItem.description}</p>
-              <p>Schedule: {classItem.schedule}</p>
-              <button onClick={() => history.push(`/class-detail/${classItem.id}`)}>Learn More</button>
+              {activeAccordion === classItem.id ? (
+                <div>
+                  <p>{classItem.description}</p>
+                  <p>Schedule: {classItem.schedule}</p>
+                </div>
+              ) : null}
+              <button onClick={() => toggleAccordion(classItem.id)}>
+                {activeAccordion === classItem.id ? "Close" : "Learn More"}
+              </button>
             </div>
           </li>
         ))}

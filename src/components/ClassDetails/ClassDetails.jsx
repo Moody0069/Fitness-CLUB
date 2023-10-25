@@ -18,12 +18,12 @@ function ClassDetails() {
 
   useEffect(() => {
     // Fetch class details based on Params.id
-    dispatch({ type: 'FETCH_USER' });
+   
     dispatch({
       type: "FETCH_CLASS_DETAILS",
       payload: Params.id,
     });
-  }, [dispatch, Params.id]);
+  }, []);
   const handleRegister = () => {
     // console.log("info ", selectedClass[0], user.id )
     dispatch ({ type: "SIGNUP_FOR_CLASS", payload: {
