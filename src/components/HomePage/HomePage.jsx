@@ -9,24 +9,24 @@ function HomePage() {
   const classes = [
     {
       id: 1,
-      name: 'Yoga',
-      description: 'A relaxing yoga class to unwind and de-stress.',
-      schedule: 'Mon, Wed, Fri at 7:00 AM',
+      name: 'Spin Class',
+      description: 'A high-intensity spin class for cardio and endurance.',
+      schedule: 'Tue and Thu at 6:00 PM',
     },
     {
       id: 2,
-      name: 'Cycle',
-      description: 'An intense cycling workout to boost your cardio fitness.',
-      schedule: 'Tue, Thu, Sat at 5:30 PM',
+      name: 'Pilates',
+      description: 'A core-strengthening Pilates class for flexibility and balance.',
+      schedule: 'Mon, Wed, Fri at 9:00 AM',
     },
     {
       id: 3,
-      name: 'Zumba',
-      description: 'A fun and energetic dance fitness class.',
-      schedule: 'Mon and Fri at 6:30 PM',
+      name: 'Aerobics',
+      description: 'An energetic aerobics class to boost your fitness levels.',
+      schedule: 'Wed and Sat at 3:30 PM',
     },
   ];
-
+  
   const [activeAccordion, setActiveAccordion] = useState(null); 
   const toggleAccordion = (id) => {
     if (activeAccordion === id) {

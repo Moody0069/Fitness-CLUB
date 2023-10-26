@@ -1,16 +1,9 @@
-/* .container styles */
+
 .container {
   text-align: center;
 }
 
-/* Class list styles */
-.class-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
 
-/* Class card styles */
 .class-card {
   width: 300px;
   margin: 10px;
@@ -20,20 +13,31 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Title styles */
+
 h3 {
   font-size: 24px;
 }
 
-/* Button styles */
+
 button {
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
+  margin-top: 10px; 
 }
 
 button:hover {
   background-color: #0056b3;
+}
+
+/* Accordion content styles */
+.class-card .accordion-content {
+  display: none; 
+  padding: 10px; 
+}
+
+.class-card.active .accordion-content {
+  display: block; 
 }
