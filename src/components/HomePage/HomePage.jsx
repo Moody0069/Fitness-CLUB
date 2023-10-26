@@ -26,7 +26,7 @@ function HomePage() {
       schedule: 'Wed and Sat at 3:30 PM',
     },
   ];
-  
+
   const [activeAccordion, setActiveAccordion] = useState(null); 
   const toggleAccordion = (id) => {
     if (activeAccordion === id) {
@@ -35,9 +35,10 @@ function HomePage() {
       setActiveAccordion(id); // If it's not active, set it as active
     }
   };
-
+     
   return (
     <div className="container">
+      
       <h1>Welcome to Fitness CLUB</h1>
       <h2>Upcoming Classes</h2>
       <ul>

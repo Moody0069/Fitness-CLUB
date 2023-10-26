@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import userReducer from "../../redux/reducers/user.reducer";
+
 import "./ClassDetails.css";
 function ClassDetails() {
   const user = useSelector((store) => store.user);
@@ -18,7 +19,7 @@ function ClassDetails() {
 
   useEffect(() => {
     // Fetch class details based on Params.id
-   
+    // dispatch({ type: 'FETCH_USER' });
     dispatch({
       type: "FETCH_CLASS_DETAILS",
       payload: Params.id,

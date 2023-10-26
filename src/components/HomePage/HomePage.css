@@ -1,43 +1,69 @@
-
 .container {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  background: linear-gradient(rgba(255, 187, 51, 0.7), rgba(102, 51, 0, 0.7)), url("/public/Images/FC.jpeg"); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+h1 {
+  font-size: 36px;
+  color: #fff; 
+  text-shadow: 2px 2px 2px #663300; 
+  margin-top: 20px;
 }
 
+h2 {
+  font-size: 24px;
+  color: #ffbb33; 
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
 
 .class-card {
-  width: 300px;
-  margin: 10px;
+  width: 80%;
+  margin: 20px auto;
   padding: 20px;
-  text-align: center;
+  background-color: #fff; 
   border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
-
 
 h3 {
   font-size: 24px;
+  color: #663300; 
 }
 
-
 button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
+  background-color: #ffbb33; 
+  color: #fff; 
+  padding: 12px 24px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px; 
+  margin-top: 10px;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #ff9900; 
 }
 
-/* Accordion content styles */
 .class-card .accordion-content {
-  display: none; 
-  padding: 10px; 
+  display: none;
+  padding: 10px;
 }
 
 .class-card.active .accordion-content {
-  display: block; 
+  display: block;
 }
