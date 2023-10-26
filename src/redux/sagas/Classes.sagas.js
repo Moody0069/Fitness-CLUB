@@ -1,6 +1,7 @@
 import { takeLatest, put } from "redux-saga/effects";
 import axios from "axios";
 
+
 function* fetchClasses() {
   console.log("in fetech sage");
   try {
@@ -46,7 +47,6 @@ function* deleteClass(action) {
     try {
       const classId = action.payload;
       yield axios.delete(`/api/classes/${classId}`);
-      yield put({ type: 'FETCH_CLASSES' }); // To refresh the list after deletion
     } catch (error) {
       console.log("Error deleting class", error);
     }

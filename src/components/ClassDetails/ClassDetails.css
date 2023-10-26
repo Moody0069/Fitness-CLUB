@@ -7,7 +7,7 @@
   height: 100vh;
   text-align: center;
   font-family: Arial, sans-serif;
-  background: linear-gradient(rgba(255, 187, 51, 0.7), rgba(102, 51, 0, 0.7)), url("/public/Images/FC.jpeg"); 
+  /* background: linear-gradient(rgba(255, 187, 51, 0.7), rgba(102, 51, 0, 0.7)), url("/Images/FC.jpeg");  */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

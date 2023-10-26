@@ -11,6 +11,7 @@ function ReservationPage() {
   const handleRemoveClass = (classId) => {
     // Dispatch the action to delete the class
     dispatch({ type: "DELETE_CLASS", payload: classId });
+  dispatch({ type: 'FETCH_CLASS_ATTENDANCE', payload: user.id});
   };
 
   useEffect(() => {
