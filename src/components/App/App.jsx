@@ -30,6 +30,9 @@ import ReservationPage from "../ReservationPage/ReservationPage";
 //import ClassBookingPage from '../ClassBookingPage/ClassBookingPage';
 import "./App.css";
 
+//tailwind css
+import "../../input.css";
+
 function App() {
   const dispatch = useDispatch();
 
