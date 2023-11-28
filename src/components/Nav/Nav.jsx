@@ -13,15 +13,15 @@ function Nav() {
         <h2 className="nav-title">Fitness CLUB</h2>
       </Link>
       <div>
-        {/* If no user is logged in, show these links */}
+        
         {!user.id && (
-          // If there's no user, show login/registration links
+          
           <Link className="navLink" to="/login">
             Login / Register
           </Link>
         )}
 
-        {/* If a user is logged in, show these links */}
+        
         {user.id && (
           <>
             <Link className="navLink" to="/HomePage">
@@ -31,10 +31,7 @@ function Nav() {
               Update Profile
             </Link>
 
-            {/* <Link className="navLink" to="/info">
-              Info Page
-            </Link> */}
-
+        
         <Link className="navLink" to="/AboutPage">
           About
         </Link>
