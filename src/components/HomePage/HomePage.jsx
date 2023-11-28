@@ -25,6 +25,12 @@ function HomePage() {
       description: 'An energetic aerobics class to boost your fitness levels.',
       schedule: 'Wed and Sat at 3:30 PM',
     },
+    {
+      id: 4,
+      name: 'HIIT (High-Intensity Interval Training)',
+      description: 'An intense HIIT class for quick and effective fat-burning workouts.',
+      schedule: 'Mon and Thu at 6:30 PM',
+    },
   ];
 
   const [activeAccordion, setActiveAccordion] = useState(null); 
