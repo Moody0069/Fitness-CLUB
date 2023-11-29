@@ -1,41 +1,28 @@
-.nav {
-  /* Flexbox layout */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffbb33; 
-  padding: 10px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-}
+/* Tailwind CSS classes for a more advanced and polished appearance */
 
-.nav a {
-  text-decoration: none;
+.nav {
+  @apply bg-gray-800 p-4 flex justify-between items-center shadow-md;
 }
 
 .nav-title {
-  font-size: 28px;
-  font-weight: 700;
-  color: #663300; 
-  margin: 0;
+  @apply text-3xl text-white font-extrabold tracking-tight;
 }
 
 .navLink {
-  display: inline-block;
-  color: #663300;
-  background-color: #ffbb33; 
-  text-align: center;
-  padding: 12px 20px;
-  text-decoration: none;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  outline: 0;
-  transition: background-color 0.3s;
-  margin-left: 10px; 
+  @apply text-white hover:text-gray-300 transition duration-300 ease-in-out mx-3 py-2 px-4 rounded;
 }
 
-.navLink:hover {
-  background-color: #ff9900; 
+.navLink.active {
+  @apply bg-gray-600;
+}
+
+/* Responsive styles for small screens */
+@media screen and (max-width: 640px) {
+  .nav {
+    @apply flex-col items-start p-6;
+  }
+
+  .navLink {
+    @apply block text-white hover:text-gray-300 mb-2;
+  }
 }

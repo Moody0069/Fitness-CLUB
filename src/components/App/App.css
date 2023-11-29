@@ -1,69 +1,62 @@
-/* Reset CSS */
-body, ul {
+body {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-/* Background image */
-body {
-  background-image: url("/public/Images/FC.jpeg"); 
+  background-image: url("/public/Images/FC.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Container styles */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.8); 
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Page title styles */
 h2 {
-  font-size: 28px;
+  font-size: 2rem;
   margin-bottom: 20px;
-  color: #007bff; 
+  color: #007bff;
 }
 
-/* Class item styles */
 li {
   background-color: #fff;
   border: 1px solid #ddd;
   margin-bottom: 20px;
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Class details styles */
 h3 {
-  font-size: 20px;
+  font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #ffb300; 
+  color: #ffb300;
 }
 
 p {
-  font-size: 16px;
+  font-size: 1rem;
   margin: 8px 0;
-  color: #333; 
+  color: #333;
 }
 
-/* Sign-up button styles */
+button, button.nav-button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 12px 24px;
+}
+
 button {
   background-color: #007bff;
   color: #fff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
   transition: background-color 0.3s;
 }
 
@@ -71,27 +64,15 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Navigation button styles */
-button.nav-button {
-  background-color: #333;
-  color: #fff;
-}
-
-/* Create a button group for navigation buttons */
 .button-group {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
 }
 
-/* Styling for navigation buttons in the group */
 .button-group button {
   background-color: #333;
   color: #fff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 5px;
-  cursor: pointer;
   transition: background-color 0.3s;
 }
 

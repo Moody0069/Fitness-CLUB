@@ -60,7 +60,7 @@ function HomePage() {
                 </div>
               ) : null}
               <button
-                className={`accordion-button ${activeAccordion === classItem.id ? 'close' : ''} bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline`}
+                className={`accordion-button ${activeAccordion === classItem.id ? 'close' : ''} bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline`}
                 onClick={() => toggleAccordion(classItem.id)}
               >
                 {activeAccordion === classItem.id ? "Close" : "Learn More"}
@@ -71,13 +71,13 @@ function HomePage() {
       </ul>
       <div className="cta-buttons flex mt-4">
         <button
-          className="bg-blue-500 text-white px-4 py-2 rounded mr-2 hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+          className="bg-blue-500 text-white px-3 py-2 rounded mr-2 hover:bg-blue-700 focus:outline-none focus:shadow-outline"
           onClick={() => history.push('/SchedulePage')}
         >
           Schedule Page
         </button>
         <button
-          className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-700 focus:outline-none focus:shadow-outline"
+          className="bg-purple-500 text-white px-3 py-2 rounded hover:bg-purple-700 focus:outline-none focus:shadow-outline"
           onClick={() => history.push('/ReservationPage')}
         >
           Reservation Page
