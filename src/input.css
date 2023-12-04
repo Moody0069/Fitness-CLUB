@@ -1,6 +1,4 @@
-/* /* SchedulePage.css */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Your existing styles go here */
