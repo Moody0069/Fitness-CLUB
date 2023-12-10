@@ -12,18 +12,21 @@ function HomePage() {
       name: 'Spin Class',
       description: 'A high-intensity spin class for cardio and endurance.',
       schedule: 'Tue and Thu at 6:00 PM',
+      backgroundImage: 'Images/Cycle.jpeg',
     },
     {
       id: 2,
       name: 'Pilates',
       description: 'A core-strengthening Pilates class for flexibility and balance.',
       schedule: 'Mon, Wed, Fri at 9:00 AM',
+      backgroundImage: 'Images/Pilates.jpeg',
     },
     {
       id: 3,
       name: 'Aerobics',
       description: 'An energetic aerobics class to boost your fitness levels.',
       schedule: 'Wed and Sat at 3:30 PM',
+      backgroundImage: 'Images/Aerobic.jpg',
     },
     {
       id: 4,
@@ -51,6 +54,7 @@ function HomePage() {
           <li key={classItem.id} className="class-item">
             <div
               className={`class-card ${activeAccordion === classItem.id ? 'active' : ''}`}
+              style={{ backgroundImage: `url(${classItem.backgroundImage})` }}
             >
               <h3 className="text-xl font-bold mb-2">{classItem.name}</h3>
               {activeAccordion === classItem.id ? (
